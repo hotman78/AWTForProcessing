@@ -18,11 +18,13 @@ class Sample extends AFP{
   
   void draw(){
     background(255);
-    fill(0);
+    stroke(255,0,0);
     line(50,50,150,150);
     line(50,150,150,50);
+    fill(0);
     rect(70,70,60,60);
-    ellipse(50,50,100,100);     
+    noFill();
+    ellipse(50,50,100,100);
   }
   
   void action(){

@@ -6,8 +6,12 @@ import javax.swing.*;
 public class AFP extends JFrame implements ActionListener{
   Graphics g;
   Object cmd;
+  Color fillColor;
+  Color strokeColor;
   AFP(String title,int x, int y, int width, int height) {
     super(title);
+    fillColor=null;
+    strokeColor=new Color(0,0,0);
     setBounds(x,y,width,height);
     setLayout(null);
     setVisible(true);
@@ -24,19 +28,39 @@ public class AFP extends JFrame implements ActionListener{
     this.draw();
   }
   void draw(){}
-  void line(int x, int y, int width, int height){g.drawLine(x,y,width,height);};
-  void rect(int x, int y, int width, int height){g.drawRect(x,y,width,height);};
-  void ellipse(int x, int y, int width, int height){g.drawOval(x,y,width,height);};
+  void line(int x, int y, int width, int height){g.setColor(strokeColor);g.drawLine(x,y,width,height);}
+  void rect(int x, int y, int width, int height){
+    if(fillColor!=null){g.setColor(fillColor);g.fillRect(x,y,width+1,height+1);}
+    if(strokeColor!=null){g.setColor(strokeColor);g.drawRect(x,y,width,height);}
+  }
+  
+  void ellipse(int x, int y, int width, int height){
+    if(fillColor!=null){g.setColor(fillColor);g.fillOval(x,y,width+1,height+1);}
+    if(strokeColor!=null){g.setColor(strokeColor);g.drawOval(x,y,width,height);}
+  }
+  
   void background(int R,int G,int B){
     g.setColor(new Color(R,G,B));
     g.fillRect(0,0,getSize().width,getSize().height);
   }
+  
   void background(int RGB){
     g.setColor(new Color(RGB,RGB,RGB));
     g.fillRect(0,0,getSize().width,getSize().height);
   }
-  void fill(int R,int G,int B){g.setColor(new Color(R,G,B));}
-  void fill(int RGB){g.setColor(new Color(RGB,RGB,RGB));}
+  
+  void fill(int R,int G,int B){fillColor=new Color(R,G,B);}
+  
+  void fill(int RGB){fillColor=new Color(RGB,RGB,RGB);}
+  
+  void noFill(){fillColor=null;}
+  
+  void stroke(int R,int G,int B){strokeColor=new Color(R,G,B);}
+  
+  void stroke(int RGB){strokeColor=new Color(RGB,RGB,RGB);}
+  
+  void noStroke(){strokeColor=null;}
+  
   Button button(String text,int x, int y, int width, int height){
     Button button;
     button=new Button(text);
