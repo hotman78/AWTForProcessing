@@ -1,4 +1,10 @@
-class Sample extends AWT{
+Sample sample;
+
+void settings(){
+  sample=new Sample();
+}
+
+class Sample extends AFP{
   Button button;
   TextField textField;
   Label text;
