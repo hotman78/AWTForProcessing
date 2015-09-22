@@ -1,0 +1,3 @@
+AWTForProcessing‚Íprocessingã‚Åprocessing•—‚È
+ATW‚Ìwindow‚ðì¬‚·‚é‚½‚ß‚Ì‚à‚Ì‚Å‚·B
+Ú‚µ‚­‚Ísample.pde‚ðŽQÆ‚µ‚Ä‚­‚¾‚³‚¢B
