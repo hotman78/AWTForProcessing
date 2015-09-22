@@ -8,6 +8,7 @@ public class AFP extends JFrame implements ActionListener{
   Object cmd;
   Color fillColor;
   Color strokeColor;
+  
   AFP(String title,int x, int y, int width, int height) {
     super(title);
     fillColor=null;
@@ -15,6 +16,7 @@ public class AFP extends JFrame implements ActionListener{
     setBounds(x,y,width,height);
     setLayout(null);
     setDefaultCloseOperation(EXIT_ON_CLOSE);
+    setVisible(true);
   }
   
   public void actionPerformed(ActionEvent e){

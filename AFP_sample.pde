@@ -18,8 +18,6 @@ class Sample extends AFP{
     textField = textField("テキスト",100,150,100,20);
     text = text("",0,170,100,20);
     background(34,195,80);
-    setVisible(true);
-    super.repaint();
   }
   
   void draw(){
